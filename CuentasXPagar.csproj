@@ -162,6 +162,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountingStatementsController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -170,16 +171,41 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Data\ApplicationDbContext.cs" />
+    <Compile Include="DocumentsModelsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202407060226069_InitialCreate.cs" />
+    <Compile Include="Migrations\202407060226069_InitialCreate.Designer.cs">
+      <DependentUpon>202407060226069_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407060350197_InitialMigration.cs" />
+    <Compile Include="Migrations\202407060350197_InitialMigration.Designer.cs">
+      <DependentUpon>202407060350197_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407060404257_FixProvidersMigration.cs" />
+    <Compile Include="Migrations\202407060404257_FixProvidersMigration.Designer.cs">
+      <DependentUpon>202407060404257_FixProvidersMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407060503563_AddDocuments.cs" />
+    <Compile Include="Migrations\202407060503563_AddDocuments.Designer.cs">
+      <DependentUpon>202407060503563_AddDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202407060522097_AddedAccountingStatements.cs" />
+    <Compile Include="Migrations\202407060522097_AddedAccountingStatements.Designer.cs">
+      <DependentUpon>202407060522097_AddedAccountingStatements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountingStatements.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DocumentsModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PayConceptsModels.cs" />
+    <Compile Include="Models\ProvidersModels.cs" />
     <Compile Include="PayConceptsModelsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProvidersModelsController.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -243,9 +269,30 @@
     <Content Include="Views\PayConceptsModels\Details.cshtml" />
     <Content Include="Views\PayConceptsModels\Edit.cshtml" />
     <Content Include="Views\PayConceptsModels\Index.cshtml" />
+    <Content Include="Views\PayConceptsModels1\Create.cshtml" />
+    <Content Include="Views\PayConceptsModels1\Delete.cshtml" />
+    <Content Include="Views\PayConceptsModels1\Details.cshtml" />
+    <Content Include="Views\PayConceptsModels1\Edit.cshtml" />
+    <Content Include="Views\PayConceptsModels1\Index.cshtml" />
+    <Content Include="Views\ProvidersModels\Create.cshtml" />
+    <Content Include="Views\ProvidersModels\Delete.cshtml" />
+    <Content Include="Views\ProvidersModels\Details.cshtml" />
+    <Content Include="Views\ProvidersModels\Edit.cshtml" />
+    <Content Include="Views\ProvidersModels\Index.cshtml" />
+    <Content Include="Views\DocumentsModels\Create.cshtml" />
+    <Content Include="Views\DocumentsModels\Delete.cshtml" />
+    <Content Include="Views\DocumentsModels\Details.cshtml" />
+    <Content Include="Views\DocumentsModels\Edit.cshtml" />
+    <Content Include="Views\DocumentsModels\Index.cshtml" />
+    <Content Include="Views\AccountingStatements\Create.cshtml" />
+    <Content Include="Views\AccountingStatements\Delete.cshtml" />
+    <Content Include="Views\AccountingStatements\Details.cshtml" />
+    <Content Include="Views\AccountingStatements\Edit.cshtml" />
+    <Content Include="Views\AccountingStatements\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -259,6 +306,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202407060226069_InitialCreate.resx">
+      <DependentUpon>202407060226069_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407060350197_InitialMigration.resx">
+      <DependentUpon>202407060350197_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407060404257_FixProvidersMigration.resx">
+      <DependentUpon>202407060404257_FixProvidersMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407060503563_AddDocuments.resx">
+      <DependentUpon>202407060503563_AddDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202407060522097_AddedAccountingStatements.resx">
+      <DependentUpon>202407060522097_AddedAccountingStatements.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -29,5 +29,13 @@ namespace CuentasXPagar.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<CuentasXPagar.Models.PayConceptsModels> PayConceptsModels { get; set; }
+
+        public System.Data.Entity.DbSet<CuentasXPagar.Models.ProvidersModels> ProvidersModels { get; set; }
+
+        public System.Data.Entity.DbSet<CuentasXPagar.Models.DocumentsModels> DocumentsModels { get; set; }
+
+        public System.Data.Entity.DbSet<CuentasXPagar.Models.AccountingStatements> AccountingStatements { get; set; }
     }
 }

@@ -10,107 +10,107 @@ using CuentasXPagar.Models;
 
 namespace CuentasXPagar
 {
-    public class PayConceptsModelsController : Controller
+    public class AccountingStatementsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: PayConceptsModels
+        // GET: AccountingStatements
         public ActionResult Index()
         {
-            return View(db.PayConceptsModels.ToList());
+            return View(db.AccountingStatements.ToList());
         }
 
-        // GET: PayConceptsModels/Details/5
+        // GET: AccountingStatements/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PayConceptsModels payConceptsModels = db.PayConceptsModels.Find(id);
-            if (payConceptsModels == null)
+            AccountingStatements accountingStatements = db.AccountingStatements.Find(id);
+            if (accountingStatements == null)
             {
                 return HttpNotFound();
             }
-            return View(payConceptsModels);
+            return View(accountingStatements);
         }
 
-        // GET: PayConceptsModels/Create
+        // GET: AccountingStatements/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: PayConceptsModels/Create
+        // POST: AccountingStatements/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre,Description,PayConceptsState")] PayConceptsModels payConceptsModels)
+        public ActionResult Create([Bind(Include = "Id,Description,InventoryID,Account,TypeOfMovement,EntryDate,Ammount,State")] AccountingStatements accountingStatements)
         {
             if (ModelState.IsValid)
             {
-                db.PayConceptsModels.Add(payConceptsModels);
+                db.AccountingStatements.Add(accountingStatements);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(payConceptsModels);
+            return View(accountingStatements);
         }
 
-        // GET: PayConceptsModels/Edit/5
+        // GET: AccountingStatements/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PayConceptsModels payConceptsModels = db.PayConceptsModels.Find(id);
-            if (payConceptsModels == null)
+            AccountingStatements accountingStatements = db.AccountingStatements.Find(id);
+            if (accountingStatements == null)
             {
                 return HttpNotFound();
             }
-            return View(payConceptsModels);
+            return View(accountingStatements);
         }
 
-        // POST: PayConceptsModels/Edit/5
+        // POST: AccountingStatements/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre,Description,PayConceptsState")] PayConceptsModels payConceptsModels)
+        public ActionResult Edit([Bind(Include = "Id,Description,InventoryID,Account,TypeOfMovement,EntryDate,Ammount,State")] AccountingStatements accountingStatements)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(payConceptsModels).State = EntityState.Modified;
+                db.Entry(accountingStatements).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(payConceptsModels);
+            return View(accountingStatements);
         }
 
-        // GET: PayConceptsModels/Delete/5
+        // GET: AccountingStatements/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PayConceptsModels payConceptsModels = db.PayConceptsModels.Find(id);
-            if (payConceptsModels == null)
+            AccountingStatements accountingStatements = db.AccountingStatements.Find(id);
+            if (accountingStatements == null)
             {
                 return HttpNotFound();
             }
-            return View(payConceptsModels);
+            return View(accountingStatements);
         }
 
-        // POST: PayConceptsModels/Delete/5
+        // POST: AccountingStatements/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PayConceptsModels payConceptsModels = db.PayConceptsModels.Find(id);
-            db.PayConceptsModels.Remove(payConceptsModels);
+            AccountingStatements accountingStatements = db.AccountingStatements.Find(id);
+            db.AccountingStatements.Remove(accountingStatements);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,0 +1,66 @@
+﻿@model CuentasXPagar.Models.DocumentsModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DocumentsModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocumentNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocumentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecordDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecordDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Proveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proveedor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

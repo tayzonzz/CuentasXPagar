@@ -10,107 +10,107 @@ using CuentasXPagar.Models;
 
 namespace CuentasXPagar
 {
-    public class PayConceptsModelsController : Controller
+    public class ProvidersModelsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: PayConceptsModels
+        // GET: ProvidersModels
         public ActionResult Index()
         {
-            return View(db.PayConceptsModels.ToList());
+            return View(db.ProvidersModels.ToList());
         }
 
-        // GET: PayConceptsModels/Details/5
+        // GET: ProvidersModels/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PayConceptsModels payConceptsModels = db.PayConceptsModels.Find(id);
-            if (payConceptsModels == null)
+            ProvidersModels providersModels = db.ProvidersModels.Find(id);
+            if (providersModels == null)
             {
                 return HttpNotFound();
             }
-            return View(payConceptsModels);
+            return View(providersModels);
         }
 
-        // GET: PayConceptsModels/Create
+        // GET: ProvidersModels/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: PayConceptsModels/Create
+        // POST: ProvidersModels/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre,Description,PayConceptsState")] PayConceptsModels payConceptsModels)
+        public ActionResult Create([Bind(Include = "Id,PersonType,Name,CedulaOrRNC,Balance,State")] ProvidersModels providersModels)
         {
             if (ModelState.IsValid)
             {
-                db.PayConceptsModels.Add(payConceptsModels);
+                db.ProvidersModels.Add(providersModels);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(payConceptsModels);
+            return View(providersModels);
         }
 
-        // GET: PayConceptsModels/Edit/5
+        // GET: ProvidersModels/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PayConceptsModels payConceptsModels = db.PayConceptsModels.Find(id);
-            if (payConceptsModels == null)
+            ProvidersModels providersModels = db.ProvidersModels.Find(id);
+            if (providersModels == null)
             {
                 return HttpNotFound();
             }
-            return View(payConceptsModels);
+            return View(providersModels);
         }
 
-        // POST: PayConceptsModels/Edit/5
+        // POST: ProvidersModels/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre,Description,PayConceptsState")] PayConceptsModels payConceptsModels)
+        public ActionResult Edit([Bind(Include = "Id,PersonType,Name,CedulaOrRNC,Balance,State")] ProvidersModels providersModels)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(payConceptsModels).State = EntityState.Modified;
+                db.Entry(providersModels).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(payConceptsModels);
+            return View(providersModels);
         }
 
-        // GET: PayConceptsModels/Delete/5
+        // GET: ProvidersModels/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PayConceptsModels payConceptsModels = db.PayConceptsModels.Find(id);
-            if (payConceptsModels == null)
+            ProvidersModels providersModels = db.ProvidersModels.Find(id);
+            if (providersModels == null)
             {
                 return HttpNotFound();
             }
-            return View(payConceptsModels);
+            return View(providersModels);
         }
 
-        // POST: PayConceptsModels/Delete/5
+        // POST: ProvidersModels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PayConceptsModels payConceptsModels = db.PayConceptsModels.Find(id);
-            db.PayConceptsModels.Remove(payConceptsModels);
+            ProvidersModels providersModels = db.ProvidersModels.Find(id);
+            db.ProvidersModels.Remove(providersModels);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
